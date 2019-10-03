@@ -3,6 +3,16 @@
   :version "0.1"
   :author "karl"
   :license "UNLICENSE"
-  :description "CL Rove example"
-  :components ((:file "package")
-               (:file "code-to-test" :depends-on ("package"))))
+  :description "CL Rove example."
+  :components ((:module "src"
+                :components ((:file "package")
+                             (:file "code-to-test" :depends-on ("package")))))
+  :in-order-to ((test-op (test-op "cl-rove-example/tests"))))
+
+(defsystem cl-rove-example/tests
+  :name "cl-rove-example/tests"
+  :version "0.1"
+  :author "karl"
+  :license "UNLICENSE"
+  :description "CL Rove example test suite."
+  :depends-on ("rove"))
