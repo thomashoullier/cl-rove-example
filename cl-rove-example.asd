@@ -15,4 +15,9 @@
   :author "karl"
   :license "UNLICENSE"
   :description "CL Rove example test suite."
-  :depends-on ("rove"))
+  :depends-on ("cl-rove-example"
+               "rove")
+  :components ((:module "tests"
+                :components ((:file "package")
+                             (:file "test-suite" :depends-on ("package")))))
+  :perform (test-op (o c) (symbol-call :rove '#:run c)))
