@@ -4,3 +4,5 @@
 (in-package :cl-rove-example)
 
 (defun my-sqrt (x) (sqrt x))
+
+(defun my-exp (x) (exp x))
